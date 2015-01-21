@@ -1,0 +1,28 @@
+{
+  "tracks": [
+    {
+      "id": "1",
+      "title": "Timestretch (I'll Follow You Live Edit)",
+      "file": "timestretch",
+      "artist": "DJ Hippo"
+    },
+    {
+      "id": "2",
+      "title": "I Need Your Hours (Ellie Goulding x Tycho)",
+      "file": "i-need-your-hours",
+      "artist": "Imagined Escapes"
+    },
+    {
+      "id": "3",
+      "title": "My Friends Never Die",
+      "file": "my-friends-never-die",
+      "artist": "THUMP"
+    },
+    {
+      "id": "4",
+      "title": "Touka",
+      "file": "touka",
+      "artist": "V/V."
+    }
+  ]
+}

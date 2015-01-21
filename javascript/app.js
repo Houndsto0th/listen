@@ -1,0 +1,42 @@
+"use strict";
+$.fn.extend({
+  cousins: function (parentSelector, childSelector) {
+    return this.parent(parentSelector).siblings().find(childSelector);
+  }
+});
+
+
+$(document).ready(function(){
+
+  $.getJSON('data.json', function(tracks) {
+    var $musicPlayerTemplate = $('#musicPlayer').html();
+    var newHTML = Mustache.to_html($musicPlayerTemplate, tracks);
+    console.log($('#tracks'))
+
+    $('#tracks').html(newHTML);
+  });
+});
+
+$('.container').on('click', '.btn', function(){
+  var cousins = $(this).cousins('.segment', '.player');
+  var otherTracks = cousins.find('audio');
+  var trackCount = otherTracks.length
+  for (var i = 0; i < trackCount; i++) {
+    otherTracks[i].pause();
+    var srcbase = otherTracks[i].src
+    otherTracks[i].src = ''
+    otherTracks[i].src = srcbase
+  }
+
+  var track = $(this).find('audio').get(0);
+  cousins.removeClass('stop')
+  cousins.addClass('play');
+  $(this).toggleClass('play').toggleClass('stop');
+
+   if (track.paused) {
+
+    track.play();
+  } else {
+    track.pause();
+  }
+});
