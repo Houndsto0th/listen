@@ -22,9 +22,10 @@ nav ul {
   text-shadow:0 1px 0 #FFF;
   background: #ddd;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
+  margin-top: 2%;
   padding: 0;
-  width: 100%;
+  width: 50%;
 }
 nav li {
 
@@ -32,6 +33,7 @@ nav li {
   padding: 0;
   position: relative;
   min-width: 25%;
+  width:100%
 }
 nav a {
   background: #ddd;
@@ -41,18 +43,14 @@ nav a {
   padding: 0 25px;
   text-align: center;
   text-decoration: none;
-  -webkit-transition: all .80s ease;
-  -moz-transition: all .80s ease;
-  -ms-transition: all .80s ease;
-  -o-transition: all .80s ease;
-  transition: all .80s ease;
+  -webkit-transition: all .50s ease;
+  -moz-transition: all .50s ease;
+  -ms-transition: all .50s ease;
+  -o-transition: all .50s ease;
+  transition: all .50s ease;
+  width: 100%;
 }
-nav .dropdown:after {
-  content: ' ▶';
-}
-nav .dropdown:hover:after{
-  content:'\25bc'
-}
+
 nav li:hover a {
   background: #ccc;
   color: #ffffff;
@@ -67,13 +65,14 @@ nav li ul {
   top: 35px;
   visibility: hidden;
   z-index: 1;
-  -webkit-transition: all .50s ease;
-  -moz-transition: all .50s ease;
-  -ms-transition: all .50s ease;
-  -o-transition: all .50s ease;
-  transition: all .50s ease;
+  width: 100%;
+  -webkit-transition: all .40s ease;
+  -moz-transition: all .40s ease;
+  -ms-transition: all .40s ease;
+  -o-transition: all .40s ease;
+  transition: all .40s ease;
 }
-nav li:hover ul {
+.visible_menu {
   opacity: 1;
   top: 50px;
   visibility: visible;
@@ -185,40 +184,4 @@ header .btn > span > span {
 
 .btn.stop > span {
   transform: scale(0.8,0.8);
-}
-
-.btn.topArrow > span > span {
-  width: 0.4em;
-  height: 1.8em;
-  transform: translate(0.8em,0.2em);
-}
-
-.btn.topArrow > span > span.s2 {
-  transform-origin: 0 0;
-  height: 1.4em;
-  transform: translate(1em,0) rotate(45deg);
-}
-
-.btn.topArrow > span > span.s3 {
-  transform-origin: 100% 0;
-  height: 1.4em;
-  transform: translate(0.6em,0) rotate(-45deg);
-}
-
-.btn.bottomArrow > span > span {
-  width: 0.4em;
-  height: 1.8em;
-  transform: translate(0.8em,0);
-}
-
-.btn.bottomArrow > span > span.s2 {
-  transform-origin: 100% 100%;
-  height: 1.4em;
-  transform: translate(0.6em,0.6em) rotate(45deg);
-}
-
-.btn.bottomArrow > span > span.s3 {
-  transform-origin: 0 100%;
-  height: 1.4em;
-  transform: translate(1em,0.6em) rotate(-45deg);
 }

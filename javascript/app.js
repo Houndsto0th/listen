@@ -5,13 +5,23 @@ $.fn.extend({
   }
 });
 
+
 $(document).on('click', '.trackName', function(){
   var audioElement = document.getElementById('audioPlayer');
   audioElement.src = "";
   var trackURL = $(this).data('info');
   audioElement.src = trackURL;
+  $('.visible_menu').removeClass('visible_menu');
+  $('.btn').removeClass('stop').addClass('play');
+  var selectedSong = document.getElementsByClassName('dropdown');
+  console.log($(selectedSong).get(0))
+
+
 });
 
+$(document).on('click', '.dropdown', function(){
+  $(this).siblings().toggleClass('visible_menu');
+});
 
 $(document).ready(function(){
   $.getJSON('data.json', function(tracks) {
@@ -41,6 +51,8 @@ $('.container').on('click', '.btn', function(){
 
     track.play();
   } else {
-    track.pause();
+    var trackSource = track.src
+    track.src = ''
+    track.src = trackSource
   }
 });
