@@ -5,15 +5,19 @@ $.fn.extend({
   }
 });
 
+$(document).on('click', '.trackName', function(){
+  var audioElement = document.getElementById('audioPlayer');
+  audioElement.src = "";
+  var trackURL = $(this).data('info');
+  audioElement.src = trackURL;
+});
+
 
 $(document).ready(function(){
-
   $.getJSON('data.json', function(tracks) {
-    var $musicPlayerTemplate = $('#musicPlayer').html();
-    var newHTML = Mustache.to_html($musicPlayerTemplate, tracks);
-    console.log($('#tracks'))
-
-    $('#tracks').html(newHTML);
+    var template = $('#musicDropdown').html();
+    var newHTML = Mustache.to_html(template, tracks);
+    $('#musicDrop').html(newHTML);
   });
 });
 

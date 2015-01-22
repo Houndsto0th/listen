@@ -112,8 +112,11 @@ function ts_addclass(o,c)
 }
 }
 
-window.onload=function()
-{
+$(document).ready(function(){
   tamingselect();
-  // add more functions if necessary
-}
+})
+// window.onload=function()
+// {
+//   tamingselect();
+//   // add more functions if necessary
+// }
