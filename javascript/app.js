@@ -12,7 +12,8 @@ $(document).on('click', '.trackName', function(){
   var trackURL = $(this).data('info');
   audioElement.src = trackURL;
   $('.visible_menu').removeClass('visible_menu');
-  $('.btn').removeClass('stop').addClass('play');
+  $('.player.btn').removeClass('x').addClass('play');
+  $('.dropdown.btn').removeClass('x').addClass('menu')
   var selectedSong = document.getElementsByClassName('dropdown');
   console.log($(selectedSong).get(0))
 
@@ -21,6 +22,7 @@ $(document).on('click', '.trackName', function(){
 
 $(document).on('click', '.dropdown', function(){
   $(this).siblings().toggleClass('visible_menu');
+  $(this).toggleClass('menu').toggleClass('x');
 });
 
 $(document).ready(function(){
@@ -32,20 +34,8 @@ $(document).ready(function(){
 });
 
 $('.container').on('click', '.btn', function(){
-  var cousins = $(this).cousins('.segment', '.player');
-  var otherTracks = cousins.find('audio');
-  var trackCount = otherTracks.length
-  for (var i = 0; i < trackCount; i++) {
-    otherTracks[i].pause();
-    var srcbase = otherTracks[i].src
-    otherTracks[i].src = ''
-    otherTracks[i].src = srcbase
-  }
-
   var track = $(this).find('audio').get(0);
-  cousins.removeClass('stop')
-  cousins.addClass('play');
-  $(this).toggleClass('play').toggleClass('stop');
+  $(this).toggleClass('play').toggleClass('x');
 
    if (track.paused) {
 

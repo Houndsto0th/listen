@@ -3,9 +3,10 @@
 <head>
   <title>jQuery</title>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,900,700,500,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="css/semantic.css">
   <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -14,7 +15,14 @@
   <script id= "musicDropdown" type="text/template">
     <nav>
       <ul class="cf">
-        <li tabindex = "0"><a class= "dropdown" href="#">Select A Song!</a>
+        <li tabindex = "0">
+          <a href="#" class="dropdown btn menu">
+            <span>
+              <span class="s1"></span>
+              <span class="s2"></span>
+              <span class="s3"></span>
+            </span>
+          </a>
           <ul id="dropdown">
             {{#tracks}}
               <li><a href="#" class="trackName" data-info=/listen_tracks/{{file}}.mp3>{{title}}</a></li>
