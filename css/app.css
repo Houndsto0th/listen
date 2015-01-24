@@ -5,6 +5,8 @@ body{
 * {
   box-sizing: border-box;
 }
+
+
 .ui.segment{
   background-color: transparent;
   width: 25%;
@@ -16,8 +18,18 @@ body{
   margin-top: -12.5%;
   margin-left: -12.5%;
   box-shadow: none;
+}
 
+.ui.segment.volumeUp{
+  left: 70%;
+  top: 65%;
+  display: inline-block;
+}
 
+.ui.segment.volumeDown{
+  left: 70%;
+  top: 60%;
+  display: inline-block;
 }
 
 /* Dropdown CSS */
@@ -47,7 +59,7 @@ nav li {
   nav li ul a {
  font-family: "Roboto";
  background: #ddd;
- color: #444;
+ color: #c1c1c1;
  display: block;
  font: bold 16px/50px sans-serif;
  padding: 0 25px;
@@ -62,7 +74,7 @@ nav li {
 }
 
 nav li:hover a {
-  background: #4c4c4b;
+  background: #636363;
   color: #ffffff;
   text-decoration: none;
   text-shadow: none;
@@ -151,7 +163,7 @@ html , body {
 }
 
 .btn:active {
-  transform: scale(1.1,1.1);
+  transform: scale(4.5, 4.5);
 }
 
 .btn:focus {
@@ -254,6 +266,12 @@ header .btn > span > span {
   transform: rotate(90deg) scale(0.25,1) translate(3.2em, 0);
 }
 
+/* Minus Button */
+
+.btn.minus > span > span {
+  transform: scale(1, .4)
+}
+
 
 
 /* Nav button */
@@ -314,4 +332,21 @@ nav .btn:hover > span > span {
 
 header .btn > span > span {
   background-color: #e91e63;
+}
+
+/* Volume Buttons */
+
+.volume.btn {
+  display: inline-block;
+  width: 4em;
+  height: 4em;
+  background-color: #656565;
+  color: #ffffff;
+  box-shadow: 0 0 4px
+  rgba(0,0,0,0.2);
+  border-radius: 2em;
+  overflow: hidden;
+  transform: translateZ(0) scale(1.4);
+  transition: all 0.5s ease;
+
 }

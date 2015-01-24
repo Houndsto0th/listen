@@ -12,12 +12,22 @@ $(document).on('click', '.trackName', function(){
   var trackURL = $(this).data('info');
   audioElement.src = trackURL;
   $('.visible_menu').removeClass('visible_menu');
-  $('.player.btn').removeClass('x').addClass('play');
+  $('.player.btn').removeClass('stop').addClass('play');
   $('.dropdown.btn').removeClass('x').addClass('menu')
   var selectedSong = document.getElementsByClassName('dropdown');
   console.log($(selectedSong).get(0))
 
 
+});
+
+$(document).on('click', '.volumeUp', function(){
+  var audioElement = document.getElementById('audioPlayer');
+  $(audioElement).volume+=.3;
+});
+
+$(document).on('click', '.volumeDown', function(){
+  var audioElement = document.getElementById('audioPlayer');
+  $(audioElement).volume=0;
 });
 
 $(document).on('click', '.dropdown', function(){
@@ -33,9 +43,9 @@ $(document).ready(function(){
   });
 });
 
-$('.container').on('click', '.btn', function(){
+$('.container').on('click', '.player.btn', function(){
   var track = $(this).find('audio').get(0);
-  $(this).toggleClass('play').toggleClass('x');
+  $(this).toggleClass('play').toggleClass('stop');
 
    if (track.paused) {
 
