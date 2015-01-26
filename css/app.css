@@ -1,11 +1,6 @@
-body{
-  font-family: "Roboto";
-
-}
 * {
   box-sizing: border-box;
 }
-
 
 .ui.segment{
   background-color: transparent;
@@ -101,7 +96,7 @@ nav li ul {
   top: 50px;
   visibility: visible;
   font-family: "Roboto";
-  background: #ddd;
+  background: #D4E157;
 
 }
 nav li ul li {
@@ -110,7 +105,7 @@ nav li ul li {
   font-family: "Roboto";
 }
 nav li ul a:hover {
-  background: #434343;
+  background: #D4E157;
   font-family: "Roboto";
   transition: all 2s ease;
 }
@@ -133,8 +128,8 @@ nav li ul a:hover {
 /* ------------------------------ */
 
 html , body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif; font-size: 14px;
@@ -142,28 +137,38 @@ html , body {
   color: #454b54;
 }
 
+.centered{
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
 
 .btn {
-  display: inline-block;
-  width: 4em;
-  height: 4em;
-  background-color: #ff712a;
+  width: 100%;
+  height: 100%;
+  background-color: #616161;
   color: #ffffff;
   box-shadow: 0 0 4px
   rgba(0,0,0,0.2);
-  border-radius: 2em;
+  border-radius: 50%;
   overflow: hidden;
-  transform: translateZ(0) scale(5.0);
+  transform: translateZ(0) scale(1);
   transition: all 0.5s ease;
-
+  margin: 0 auto;
+  display: inherit;
 }
+
 
 .btn:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .btn:active {
-  transform: scale(4.5, 4.5);
+  transform: scale(.75, .75);
 }
 
 .btn:focus {
@@ -174,54 +179,51 @@ html , body {
 
 .btn > span {
   display: block;
-  position: relative;
-  width: 2em;
-  height: 2em;
+  position: fixed;
+  width: 44%;
+  height: 44%;
   transition: transform 0.5s ease;
   overflow: hidden;
-  margin: 1em;
+  margin: 28%;
 }
 
 .btn > span > span {
   display: block;
-  background-color: #fff;
+  background-color: #CDDC39;
   position: absolute;
   top: 0;
   left: 0;
-  width: 2em;
-  height: 2em;
+  width: 100%;
+  height: 100%;
   transition: all 0.5s ease;
   border: 1px solid transparent;
 }
 
-header .btn > span > span {
-  background-color: #e91e63;
-}
 
 /* Play Button */
 
 .btn.play > span {
-  transform: translate(1em,0) scale(1.6,1);
+  transform: translate(67%,0) scale(2.1,1.2);
 }
 
 .btn.play > span > span {
-  transform: rotate(-45deg) translate(-1em, -1em) scale(1,1);
+  transform: rotate(-45deg) translate(-50%, -50%) scale(1,1);
 }
 
 /* Pause Button */
 
 .btn.pause > span > span {
-  transform: scale(0.4,1) translate(-1.6em, 0);
+  transform: scale(0.4,1) translate(-74%, 0);
 }
 
 .btn.pause > span > span.s3 {
-  transform: scale(0.4,1) translate(1.6em, 0);
+  transform: scale(0.4,1) translate(75%, 0);
 }
 
 /* Stop Button */
 
 .btn.stop > span {
-  transform: scale(0.8,0.8);
+  transform: scale(1,1);
 }
 
 /* Plus Button */
@@ -235,14 +237,17 @@ header .btn > span > span {
 }
 
 /* Exclamation */
+.btn.exclaim > span {
+  transform: scale(1.3);
+}
 
 .btn.exclaim > span > span {
-  transform: scale(0.3,.8) translate(0, -.8em);
+  transform: scale(0.3,.8) translate(0, -30%);
 }
 
 .btn.exclaim > span > span.s3 {
   border-radius: 50%;
-  transform: scale(0.3,.3) translate(0, 1.8em);
+  transform: scale(0.3,.3) translate(0, 116%);
 }
 
 /* 'X' Button */
@@ -256,14 +261,14 @@ header .btn > span > span {
 
 /* Menu button */
 .btn.menu > span > span.s1 {
-  transform: rotate(90deg) scale(0.25,1) translate(-3.2em, 0);
+  transform: rotate(90deg) scale(0.25,1) translate(-150%, 0);
 }
 .btn.menu > span > span.s2 {
-  transform: rotate(90deg) scale(0.25,1) translate(0em, 0);
+  transform: rotate(90deg) scale(0.25,1) translate(0, 0);
 }
 
 .btn.menu > span > span.s3 {
-  transform: rotate(90deg) scale(0.25,1) translate(3.2em, 0);
+  transform: rotate(90deg) scale(0.25,1) translate(150%, 0);
 }
 
 /* Minus Button */
@@ -277,7 +282,7 @@ header .btn > span > span {
 /* Nav button */
 nav .btn {
   display: inline-block;
-  width: 4em;
+  width: 10em;
   height: 4em;
   background-color: #fff;
   color: #575757;
@@ -285,7 +290,7 @@ nav .btn {
   rgba(0,0,0,0.2);
   border-radius: 2em;
   overflow: hidden;
-  transform: translateZ(0);
+  transform: translateZ(0) scale(1);
   transition: all 0.5s ease;
 
 }
@@ -311,12 +316,12 @@ nav .btn > span {
   height: 2em;
   transition: transform 0.5s ease;
   overflow: hidden;
-  margin: 1em;
+  margin: 1em auto;
 }
 
 nav .btn > span > span {
   display: block;
-  background-color: #575757;
+  background-color: #CDDC39;
   position: absolute;
   top: 0;
   left: 0;
@@ -328,10 +333,6 @@ nav .btn > span > span {
 
 nav .btn:hover > span > span {
   background-color: #fff
-}
-
-header .btn > span > span {
-  background-color: #e91e63;
 }
 
 /* Volume Buttons */

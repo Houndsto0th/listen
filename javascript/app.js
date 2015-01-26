@@ -1,9 +1,26 @@
-"use strict";
+
 $.fn.extend({
   cousins: function (parentSelector, childSelector) {
     return this.parent(parentSelector).siblings().find(childSelector);
   }
 });
+  var timeOut = 0
+  var timeIn = 0
+
+function pulseOut() {
+  setTimeout(function () {
+    $('.dropdown.btn').get(0).style.transform = ('scale(.75)');
+    pulseOut();
+  }, timeOut);
+}
+
+function pulseIn() {
+  setTimeout(function () {
+    style = $('.dropdown.btn').get(0).style;
+    style.transform = ('scale(1.2)');
+    pulseIn();
+  }, timeIn);
+}
 
 
 $(document).on('click', '.trackName', function(){
@@ -15,8 +32,12 @@ $(document).on('click', '.trackName', function(){
   $('.player.btn').removeClass('stop').addClass('play');
   $('.dropdown.btn').removeClass('x').addClass('menu')
   var selectedSong = document.getElementsByClassName('dropdown');
-  console.log($(selectedSong).get(0))
-
+  $('.player.btn').removeClass('exclaim');
+  $('.player.btn').addClass('play');
+  timeIn = 0;
+  timeOut = 0;
+  $('.dropdown.btn').get(0).style.transform = ('scale(1)');
+  
 
 });
 
@@ -43,16 +64,25 @@ $(document).ready(function(){
   });
 });
 
-$('.container').on('click', '.player.btn', function(){
+$('.centered').on('click', '.player.btn', function(){
   var track = $(this).find('audio').get(0);
   $(this).toggleClass('play').toggleClass('stop');
+  if (track.src.indexOf('/listen_tracks/') >= 0){
+  } else {
+    $(this).removeClass('play')
+    $(this).addClass('exclaim')
+    timeOut = 500;
+    timeIn = 750;
+    pulseIn();
+    pulseOut();
+  };
 
    if (track.paused) {
-
     track.play();
   } else {
     var trackSource = track.src
     track.src = ''
     track.src = trackSource
-  }
+  };
+
 });
