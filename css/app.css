@@ -282,7 +282,7 @@ html , body {
 /* Nav button */
 nav .btn {
   display: inline-block;
-  width: 4em;
+  width: 12em;
   height: 4em;
   background-color: #fff;
   color: #575757;
@@ -307,7 +307,6 @@ nav .btn:focus {
   outline: 0;
   border:none;
   color: rgba(0, 0, 0, 0);
-  width: 12em;
 }
 
 nav .btn > span {
