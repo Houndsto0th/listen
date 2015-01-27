@@ -53,7 +53,7 @@ nav li {
 /* previous nav option with 'select a song' text */
   nav li ul a {
  font-family: "Roboto";
- background: #ddd;
+ background: #636363;
  color: #c1c1c1;
  display: block;
  font: bold 16px/50px sans-serif;
@@ -282,7 +282,7 @@ html , body {
 /* Nav button */
 nav .btn {
   display: inline-block;
-  width: 10em;
+  width: 4em;
   height: 4em;
   background-color: #fff;
   color: #575757;
@@ -307,6 +307,7 @@ nav .btn:focus {
   outline: 0;
   border:none;
   color: rgba(0, 0, 0, 0);
+  width: 12em;
 }
 
 nav .btn > span {

@@ -32,12 +32,10 @@ $(document).on('click', '.trackName', function(){
   $('.player.btn').removeClass('stop').addClass('play');
   $('.dropdown.btn').removeClass('x').addClass('menu')
   var selectedSong = document.getElementsByClassName('dropdown');
-  $('.player.btn').removeClass('exclaim');
-  $('.player.btn').addClass('play');
+  $('.player.btn').removeClass('exclaim').addClass('play');
   timeIn = 0;
   timeOut = 0;
   $('.dropdown.btn').get(0).style.transform = ('scale(1)');
-  
 
 });
 
